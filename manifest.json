@@ -1,0 +1,43 @@
+{
+	"manifest_version": 2,
+	"name": "Sidebar",
+	"description": "Does stuff",
+	"version": "0.1",
+
+	"browser_action": {
+		"default_icon": "img/icon128.png"
+	},
+	
+	"background": {
+		"scripts": [
+			"background.js"
+		],
+		"persistent": true
+	},
+	
+	"icons": {
+		"32": "img/icon32.png",
+		"48": "img/icon48.png",
+		"128": "img/icon128.png" 
+	},
+	  
+	"permissions": [
+		"activeTab",
+		"storage",
+		"https://ajax.googleapis.com/",
+		"*"
+	],
+	
+	"content_scripts" : [
+		{
+			"matches" : [
+				"*"
+			],
+			"js" : [
+				"jquery.min.js",
+				"functions.js",
+				"base.js"
+			]
+		}
+	]
+}
